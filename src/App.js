@@ -7,18 +7,42 @@ import { useState } from 'react';
 function App() {
 
 const [word, setWord] = useState ("")
-const add = (e) => {
+const [count, setCount] = useState ()
+const [timeOut, setTimeout] = useState (0)
+
+const addNumber = (e) => {
   setWord (e.target.value)
 }
+
+const countDown = () =>{
+  setTimeout(()=>{
+    let a = 0
+    console.log ( a + 1)
+
+    // let a = 0
+    // console.log(a+1)
+    // return (a)
+},1000)
+}
+
+
+
+// function countDown  (){
+//   setCount ( function (a){
+//     return a + 100
+//   })
+
+// }
 
 
   return (
     <div>
+      {timeOut}
 
-      <p> {word} 秒</p>
+      <p> {countDown} 秒</p>
 
-      <input value = {word} onChange = {add}></input>
-      <button>start</button>
+      <input value = {word} onChange = {addNumber}></input>
+      <button onClick = {countDown}>start</button>
       
     </div>
   );
